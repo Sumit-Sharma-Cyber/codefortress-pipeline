@@ -14,8 +14,6 @@ Chinmai Raj
 
 Dhananjaysinh
 
-Fahad Khan
-
 3. The Defensive Arsenal (Tools Used)
 
 TruffleHog: A specialized high-speed secret scanning tool used to detect leaked credentials (AWS keys, API tokens) in git repositories and commits.
