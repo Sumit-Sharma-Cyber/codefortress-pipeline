@@ -12,7 +12,7 @@ Sumit Sharma(Team Leader)
 
 Chinmai Raj
 
-Dhanajay Sinh
+Dhananjaysinh
 
 Fahad Khan
 
