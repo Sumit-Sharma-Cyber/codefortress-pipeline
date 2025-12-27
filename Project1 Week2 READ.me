@@ -1,36 +1,72 @@
-🛠 Features We'll Implement in Code
-✅ Wake Word Activation – Neuro will activate only when you say "Neuro".
-✅ Self-Introduction – If you ask "Who are you?", it will respond:
-🗣️ "Hi, I am Neuro, made by Mr. Sumit Sharma. I am built with an ESP32, motors, sensors, and a voice assistant system."
-✅ Voice-Controlled Searching – If you ask something (e.g., "What is AI?"), it will search the internet and respond.
-✅ Conversational AI – It will reply like ChatGPT (e.g., "How can I help you?").
-✅ Emotional Responses – It will have friendly, excited, and thinking tones.
-✅ Male Voice Output – Neuro will use Google Text-to-Speech (TTS) API for a male voice output.
-✅ Movement Control – If you say "Move forward" or "Turn left", it will respond & move accordingly.
+# 🛡️ CodeFortress Pipeline: SonarQube Security Analysis
 
-🛠 Steps to Implement
-1️⃣ Hardware Setup
-ESP32 (Brain of Neuro)
+This project integrates **SonarQube** to perform automated security and quality reviews on our Python-based pipeline code.
 
-Microphone Module (Detects voice)
+## 👥 Project Team
+* **Sumit Sharma** – Team Leader 👑
+* **Chinmai Raj** – Member 🔍
+* **Dhananjay Sinh** – Member ⚙️
 
-Speaker Module (DFPlayer Mini or Android TTS via Bluetooth) (Plays voice output)
+## 🛠️ Features Implemented
+* ✅ **Static Code Analysis** – Scans `app.py` to detect bugs, vulnerabilities, and code smells.
+* ✅ **Vulnerability Tracking** – Identifies high-risk security flaws like hardcoded credentials.
+* ✅ **Maintainability Metrics** – Evaluates code complexity and technical debt.
+* ✅ **Quality Gate Monitoring** – Provides a real-time status of project health.
 
-HC-05 Bluetooth Module (If using phone for internet search)
+## 🚨 Critical Security Finding
+During the analysis of `app.py`, a **Blocker** level vulnerability was detected:
 
-L298N Motor Driver (For movement)
+> **Issue:** Disclosure of AWS Access Key ID.
+> **Impact:** Exposing AWS credentials in source code can lead to unauthorized access to cloud infrastructure and potential data breaches.
+> **Remediation:** Remove the hardcoded key and use environment variables or a secret manager.
 
-BO Motors + Servo Motor (For movement & nodding)
 
-2️⃣ Software & Libraries
-speech_recognition → Listens for commands
+## 🚀 Execution Steps
 
-pyttsx3 → Converts text to male voice
+### 1️⃣ Run SonarQube Server
+Ensure your SonarQube container is active on Kali Linux:
+```bash
+sudo docker start SonarQube
 
-gTTS → (Alternative) Uses Google’s text-to-speech
 
-requests → Searches the internet
+2️⃣ Project Configuration
+Ensure sonar-project.properties is in your project root:
 
-Bluetooth Serial → Connects ESP32 with Android phone
+Properties
 
-Arduino C + Python → ESP32 & AI Assistant Code
+sonar.projectKey=codefortress-pipeline
+sonar.projectName=CodeFortress Pipeline
+sonar.sources=.
+sonar.language=py
+sonar.python.version=3
+sonar.sourceEncoding=UTF-8
+3️⃣ Execute Analysis
+Run the scanner using Docker to generate the report:
+
+Bash
+
+sudo docker run --rm \
+  --network=host \
+  -v "$(pwd):/usr/src" \
+  sonarsource/sonar-scanner-cli \
+  -Dsonar.projectKey=codefortress-pipeline \
+  -Dsonar.token=sqp_0a5f989ebd6780a56245d500e5ce988541616b53
+📊 Latest Analysis Results
+Quality Gate Status: PASSED ✅
+
+Bugs: 0 (Rating A)
+
+Vulnerabilities: 1 (Rating E - Blocker)
+
+Security Hotspots: 0 (Rating A)
+
+Code Smells: 0 (Rating A)
+
+🛠 Tools Used
+SonarQube Community Edition – Security Dashboard
+
+SonarScanner CLI – Code Analysis Engine
+
+Docker – Containerized Deployment
+
+Python – Source Language (app.py)
