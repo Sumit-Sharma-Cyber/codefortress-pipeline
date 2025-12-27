@@ -1,0 +1,36 @@
+🛠 Features We'll Implement in Code
+✅ Wake Word Activation – Neuro will activate only when you say "Neuro".
+✅ Self-Introduction – If you ask "Who are you?", it will respond:
+🗣️ "Hi, I am Neuro, made by Mr. Sumit Sharma. I am built with an ESP32, motors, sensors, and a voice assistant system."
+✅ Voice-Controlled Searching – If you ask something (e.g., "What is AI?"), it will search the internet and respond.
+✅ Conversational AI – It will reply like ChatGPT (e.g., "How can I help you?").
+✅ Emotional Responses – It will have friendly, excited, and thinking tones.
+✅ Male Voice Output – Neuro will use Google Text-to-Speech (TTS) API for a male voice output.
+✅ Movement Control – If you say "Move forward" or "Turn left", it will respond & move accordingly.
+
+🛠 Steps to Implement
+1️⃣ Hardware Setup
+ESP32 (Brain of Neuro)
+
+Microphone Module (Detects voice)
+
+Speaker Module (DFPlayer Mini or Android TTS via Bluetooth) (Plays voice output)
+
+HC-05 Bluetooth Module (If using phone for internet search)
+
+L298N Motor Driver (For movement)
+
+BO Motors + Servo Motor (For movement & nodding)
+
+2️⃣ Software & Libraries
+speech_recognition → Listens for commands
+
+pyttsx3 → Converts text to male voice
+
+gTTS → (Alternative) Uses Google’s text-to-speech
+
+requests → Searches the internet
+
+Bluetooth Serial → Connects ESP32 with Android phone
+
+Arduino C + Python → ESP32 & AI Assistant Code
