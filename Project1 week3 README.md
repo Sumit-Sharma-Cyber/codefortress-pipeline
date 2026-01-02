@@ -5,7 +5,7 @@ This project stage focuses on **Dynamic Application Security Testing (DAST)** an
 ## 👥 Project Team
 * **Sumit Sharma** – Team Leader 👑
 * **Chinmai Raj** – Member 🔍
-* **Dhananjay Sinh** – Member ⚙️
+* **Dhananjaysinh** – Member ⚙️
 
 ## 🛠️ Features Implemented
 * [cite_start]✅ **Containerization** – Used Docker to package the Python Flask application into a portable image.
@@ -19,7 +19,6 @@ During the OWASP ZAP Active Scan, a **High** level vulnerability was confirmed:
 > [cite_start]**Issue:** Reflected Cross-Site Scripting (XSS).
 > [cite_start]**Impact:** Attackers can inject malicious scripts into the web page, compromising user sessions and data.
 > [cite_start]**Detection Method:** ZAP successfully identified the flaw in the staging build during the automated attack phase.
-
 
 
 ## 🚀 Execution Steps
@@ -55,10 +54,8 @@ Save as ZAP_Security_Report.html in the repository root.
 
 OWASP ZAP – Dynamic Application Security Testing (DAST) 
 
-
 Docker – Containerization & Staging Deployment 
 
 Python (Flask) – Application Framework
-
 
 TruffleHog – Secret Scanning (AWS Key Detection)
