@@ -20,7 +20,7 @@ The following tools were integrated into the automated `run_scans.sh` script:
 ## 👥 Project Team
 * **Lead Developer:** Sumit Sharma
 * **Security Analyst:** Chinmai Raj
-* **Security Engineer:** Dhanajaya Singh
+* **Security Engineer:** Dhanajayasingh
 
 ---
 
